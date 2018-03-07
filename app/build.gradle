@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "com.cloudtravel.cloudtravelandroid"
         minSdkVersion 21
@@ -36,4 +35,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     provided 'org.projectlombok:lombok:1.16.18'
     compile project(':support')
+    compile 'com.github.bumptech.glide:glide:3.7.0'
 }
