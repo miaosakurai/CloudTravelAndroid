@@ -22,15 +22,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="24jimGUmQ2PrC5mbx9m7GhIbEwRfe1Mw" />
 
-        <activity android:name=".main.MainActivity">
-        </activity>
+        <activity android:name=".main.MainActivity" />
 
         <activity android:name=".main.DiscoverActivity">
+        </activity>
+
+        <activity android:name=".main.SearchActivity" />
+
+        <activity android:name=".main.HomeActivity" />
+
+        <activity android:name=".main.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,8 +43,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".main.SearchActivity">
-        </activity>
+        <activity android:name=".main.RegisterActivity"></activity>
 
     </application>
 
