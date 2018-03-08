@@ -1,12 +1,13 @@
 package com.cloudtravel.cloudtravelandroid.main;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.cloudtravel.cloudtravelandroid.R;
 import com.cloudtravel.cloudtravelandroid.widget.GlideImageLoader;
 import com.youth.banner.Banner;
@@ -16,33 +17,35 @@ import com.youth.banner.Transformer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DiscoverActivity extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class DiscoverFragment extends Fragment {
 
     private List<Integer> bannerImages;
     private List<String> bannerTitles;
     private Banner banner;
-
     private TextView search_layout;
-    private BottomNavigationBar bottomNavigationBar;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_discover);
-        initView();
+
+    public DiscoverFragment() {
+        // Required empty public constructor
     }
 
-    public void initView(){
 
-        search_layout=(TextView)findViewById(R.id.search_bar);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_discover, container, false);
+        search_layout=view.findViewById(R.id.search_bar);
         search_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(DiscoverActivity.this,SearchActivity.class);
+                Intent intent=new Intent(getActivity(),SearchActivity.class);
                 startActivity(intent);
             }
         });
-
         bannerImages =new ArrayList<>();
         bannerImages.add(R.drawable.banner_image_italy);
         bannerImages.add(R.drawable.banner_image_maldives);
@@ -53,8 +56,7 @@ public class DiscoverActivity extends AppCompatActivity {
         bannerTitles.add("马尔代夫");
         bannerTitles.add("巴黎");
         bannerTitles.add("西班牙");
-
-        banner =(Banner)findViewById(R.id.banner);
+        banner = view.findViewById(R.id.banner);
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE);
         banner.setImageLoader(new GlideImageLoader());
         banner.setImages(bannerImages);
@@ -65,6 +67,7 @@ public class DiscoverActivity extends AppCompatActivity {
         banner.setIndicatorGravity(BannerConfig.CENTER);
         banner.start();
 
-        bottomNavigationBar=findViewById(R.id.bottom_navigation_bar);
+        return view;
     }
+
 }

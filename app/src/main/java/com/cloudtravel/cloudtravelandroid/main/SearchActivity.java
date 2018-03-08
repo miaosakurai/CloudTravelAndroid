@@ -76,8 +76,7 @@ public class SearchActivity extends AppCompatActivity {
         backImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(SearchActivity.this,DiscoverActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
         searchButton=(Button)findViewById(R.id.search_button);

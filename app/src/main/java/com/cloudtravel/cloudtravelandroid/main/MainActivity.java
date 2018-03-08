@@ -19,21 +19,22 @@ public class MainActivity extends CloudTravelBaseActivity implements BottomNavig
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitleString("123");
-        //showBackIcon();
-        //showTitleBar();
         initView();
     }
 
     private void initView() {
-        BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
+        BottomNavigationBar bottomNavigationBar = findViewById(R.id.bottom_navigation_bar);
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_SHIFTING);
         bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_RIPPLE);
-
         bottomNavigationBar
-                //.addItem(new BottomNavigationItem(R.drawable.location, "定位").setActiveColorResource(R.color.orange))
-                .addItem(new BottomNavigationItem(R.drawable.share, "发现").setActiveColorResource(R.color.blue))
-                //.addItem(new BottomNavigationItem(R.drawable.search, "搜索").setActiveColorResource(R.color.blue))
+                .addItem(new BottomNavigationItem(R.drawable.navigation_icon_discover,"发现")
+                        .setActiveColorResource(R.color.myBlue))
+                .addItem(new BottomNavigationItem(R.drawable.navigation_icon_calendar,"日程")
+                        .setActiveColorResource(R.color.myColor2))
+                .addItem(new BottomNavigationItem(R.drawable.navigation_icon_paper_plane,"分享")
+                        .setActiveColorResource(R.color.myColor3))
+                .addItem(new BottomNavigationItem(R.drawable.navigation_icon_user,"我")
+                        .setActiveColorResource(R.color.myColor4))
                 .setFirstSelectedPosition(0)
                 .initialise();
         fragments = getFragments();
@@ -45,41 +46,46 @@ public class MainActivity extends CloudTravelBaseActivity implements BottomNavig
     public void onTabSelected(int position) {
         if (fragments != null) {
             if (position < fragments.size()) {
-                FragmentManager fm = getSupportFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 Fragment fragment = null;
                 switch (position) {
                     case 0:
-                        //fragment = MapFragment.newInstance();
-                        setTitleString("定位");
+                        fragment = new DiscoverFragment();
+                        setTitleString("发现");
                         break;
-                    /*case 1:
-                        fragment = DiscoverFragment.newInstance();
-                        setTitle("发现");
+                    case 1:
+                        fragment = new ScheduleFragment();
+                        setTitleString("日程");
                         break;
                     case 2:
-                        fragment = SearchFragment.newInstance();
-                        setTitle("搜索");
-                        break;*/
+                        fragment = new MomentsFragment();
+                        setTitleString("分享");
+                        break;
+                    case 3:
+                        fragment = new HomeFragment();
+                        setTitleString("我");
                     default:
                         break;
                 }
                 fragments.remove(position);
                 fragments.add(position, fragment);
                 if (fragment.isAdded()) {
-                    ft.replace(R.id.layFrame, fragment);
+                    fragmentTransaction.replace(R.id.frame_layout, fragment);
                 } else {
-                    ft.add(R.id.layFrame, fragment);
+                    fragmentTransaction.add(R.id.frame_layout, fragment);
                 }
-                ft.commitAllowingStateLoss();
+                fragmentTransaction.commitAllowingStateLoss();
             }
         }
-
     }
 
     private ArrayList<Fragment> getFragments() {
         ArrayList<Fragment> fragments = new ArrayList<>();
-        //fragments.add(MapFragment.newInstance());
+        fragments.add(new DiscoverFragment());
+        fragments.add(new ScheduleFragment());
+        fragments.add(new MomentsFragment());
+        fragments.add(new HomeFragment());
         return fragments;
     }
 
@@ -87,11 +93,11 @@ public class MainActivity extends CloudTravelBaseActivity implements BottomNavig
     public void onTabUnselected(int position) {
         if (fragments != null) {
             if (position < fragments.size()) {
-                FragmentManager fm = getSupportFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 Fragment fragment = fragments.get(position);
-                ft.remove(fragment);
-                ft.commitAllowingStateLoss();
+                fragmentTransaction.remove(fragment);
+                fragmentTransaction.commitAllowingStateLoss();
             }
         }
     }

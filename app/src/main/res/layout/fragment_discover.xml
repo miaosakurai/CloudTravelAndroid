@@ -41,7 +41,7 @@
     <com.youth.banner.Banner
         android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="150dp" />
+        android:layout_height="200dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,69 +84,5 @@
         android:layout_height="0dp"
         android:layout_weight="1">
     </android.support.v7.widget.RecyclerView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="5">
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="6"
-                android:src="@drawable/local_recommend_image_1"
-                android:scaleType="fitXY"
-                android:layout_margin="1dp"
-                />
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="5">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/local_recommend_image_2"
-                    android:scaleType="fitXY"
-                    android:layout_margin="1dp"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/local_recommend_image_3"
-                    android:scaleType="fitXY"
-                    android:layout_margin="1dp"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="2">
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/local_recommend_image_4"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:layout_margin="1dp"/>
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/local_recommend_image_5"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:layout_margin="1dp"/>
-        </LinearLayout>
-
-    </LinearLayout>
 
 </LinearLayout>
