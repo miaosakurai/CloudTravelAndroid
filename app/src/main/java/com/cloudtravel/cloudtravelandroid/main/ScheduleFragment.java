@@ -1,5 +1,6 @@
 package com.cloudtravel.cloudtravelandroid.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.cloudtravel.cloudtravelandroid.R;
 
@@ -19,6 +21,7 @@ import java.util.List;
 public class ScheduleFragment extends Fragment {
 
     private List<ScheduleItem> scheduleList = new ArrayList<>();
+    private ImageView add_schedule;
 
     public ScheduleFragment() {
         // Required empty public constructor
@@ -36,6 +39,15 @@ public class ScheduleFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         ScheduleItemAdapter scheduleAdapter = new ScheduleItemAdapter(scheduleList);
         recyclerView.setAdapter(scheduleAdapter);
+
+        add_schedule=view.findViewById(R.id.add_schedule);
+        add_schedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),AddScheduleActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }
