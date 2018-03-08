@@ -19,8 +19,6 @@ public class MomentsFragment extends Fragment {
 
     private RecyclerView rv_moments;
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -32,4 +32,11 @@
     <style name="Base.Widget.AppCompat.Spinner.Underlined" parent="@style/Base.Widget.AppCompat.Spinner">
         <item name="android:background">@drawable/abc_spinner_textfield_background_material</item>
     </style>
+
+    <color name="myBlue">#2EA9DF</color>
+    
+    <color name="myColor1">#EDDE8B</color>
+    <color name="myColor2">#FBB217</color>
+    <color name="myColor3">#608F9F</color>
+    <color name="myColor4">#014D67</color>
 </resources>
