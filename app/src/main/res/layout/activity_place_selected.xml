@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/appBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/collapsing_toolbar"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/place_image_view"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"/>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/place_name_text_view"
+                        android:textSize="20sp"
+                        android:text="上海环球港"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/place_address_text_view"
+                        android:textSize="14sp"
+                        android:text="上海市普陀区中山北路3300号"
+                        android:layout_marginTop="3sp"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/black"/>
+
+                    <RatingBar
+                        android:layout_marginTop="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:id="@+id/rating_bar"
+                        android:rating="4.5"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_marginStart="5dp"/>
+                    
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@color/common_line_grey"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="7dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/collect_image_view"
+                            android:layout_alignParentStart="true"
+                            android:src="@mipmap/place_icon_star"
+                            android:layout_marginStart="50dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/collect_text_view"
+                            android:layout_below="@id/collect_image_view"
+                            android:text="收藏"
+                            android:layout_marginStart="51dp"
+                            android:layout_marginTop="2dp"
+                            android:textColor="#FF6100"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/search_around_image_view"
+                            android:src="@mipmap/place_icon_location"
+                            android:layout_centerInParent="true"
+                            android:layout_alignTop="@id/collect_image_view"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/search_around_text_view"
+                            android:layout_centerInParent="true"
+                            android:layout_below="@id/search_around_image_view"
+                            android:text="搜周边"
+                            android:layout_marginTop="2dp"
+                            android:textColor="#d81e06"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/schedule_image_view"
+                            android:src="@mipmap/place_icon_calendar"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="50dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/schedule_text_view"
+                            android:layout_below="@id/search_around_image_view"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="37dp"
+                            android:layout_marginTop="2dp"
+                            android:text="添加行程"
+                            android:textColor="@color/myBlue"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="简介"
+                        android:textSize="23sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/black"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="7dp"
+                        android:background="@color/common_line_grey"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/introduction_text_view"
+                        android:text="66666666666666666666666666"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="评论"
+                        android:textSize="23sp"
+                        android:textColor="@color/black"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="7dp"
+                        android:background="@color/common_line_grey"
+                        android:id="@+id/comment_line_view"
+                        android:layout_marginBottom="5dp"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:src="@mipmap/place_icon_comment"
+        app:layout_anchor="@id/comment_line_view"
+        app:layout_anchorGravity="bottom|end"
+        app:backgroundTint="@color/myBlue"/>
+
+</android.support.design.widget.CoordinatorLayout>
