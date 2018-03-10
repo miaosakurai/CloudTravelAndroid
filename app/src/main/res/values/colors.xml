@@ -37,4 +37,12 @@
     <color name="black">#000000</color>
     <color name="green">#ff28713f</color>
     <color name="blue">#ff0000ff</color>
+
+    <color name="my_blue">#2EA9DF</color>
+    <color name="myColor1">#EDDE8B</color>
+    <color name="my_orange">#FBB217</color>
+    <color name="my_grey_blue">#608F9F</color>
+    <color name="my_dark_blue">#014D67</color>
+    <color name="my_green">#00C957</color>
+
 </resources>

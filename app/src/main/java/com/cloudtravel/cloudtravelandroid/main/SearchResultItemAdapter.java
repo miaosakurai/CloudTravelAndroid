@@ -1,5 +1,7 @@
-package com.cloudtravel.cloudtravelandroid.widget;
+package com.cloudtravel.cloudtravelandroid.main;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,13 +15,16 @@ import java.util.List;
 public class SearchResultItemAdapter extends RecyclerView.Adapter<SearchResultItemAdapter.ViewHolder> {
 
     private List<SearchResultItem> mSearchResultItemList;
+    private Context mContext;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
+        View itemView;
         TextView itemName;
         TextView itemAddress;
 
         public ViewHolder(View view) {
             super(view);
+            itemView=view;
             itemName=view.findViewById(R.id.item_name);
             itemAddress=view.findViewById(R.id.item_address);
         }
@@ -30,9 +35,21 @@ public class SearchResultItemAdapter extends RecyclerView.Adapter<SearchResultIt
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
+        if (mContext==null) {
+            mContext=parent.getContext();
+        }
         View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.result_item_layout,parent,false);
-        ViewHolder holder=new ViewHolder(view);
+        final ViewHolder holder = new ViewHolder(view);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position=holder.getAdapterPosition();
+                SearchResultItem searchResultItem = mSearchResultItemList.get(position);
+                Intent intent = new Intent(mContext,PlaceSelectedActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
         return holder;
     }
 
