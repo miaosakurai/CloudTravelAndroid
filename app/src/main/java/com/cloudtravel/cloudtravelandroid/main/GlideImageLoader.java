@@ -1,4 +1,4 @@
-package com.cloudtravel.cloudtravelandroid.widget;
+package com.cloudtravel.cloudtravelandroid.main;
 
 import android.content.Context;
 import android.widget.ImageView;

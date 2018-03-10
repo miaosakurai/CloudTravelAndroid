@@ -26,19 +26,21 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="24jimGUmQ2PrC5mbx9m7GhIbEwRfe1Mw" />
 
-        <activity android:name=".main.MainActivity">
-        </activity>
+        <activity android:name=".main.MainActivity" />
         <activity android:name=".main.SearchActivity" />
-        <activity android:name=".main.LoginActivity">
+        <activity
+            android:name=".main.PlaceSelectedActivity"
+            android:theme="@style/PlaceSelectedActivityTheme" />
+        <activity android:name=".main.AddScheduleActivity" />
+        <activity android:name=".main.UpdateScheduleActivity" />
+        <activity android:name=".main.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.RegisterActivity" />
-        <activity android:name=".main.PlaceSelectedActivity"></activity>
-        <activity android:name=".main.AddScheduleActivity"></activity>
-        <activity android:name=".main.UpdateScheduleActivity"></activity>
+        <activity android:name=".main.SignUpActivity"></activity>
     </application>
 
 </manifest>

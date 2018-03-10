@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.widget.TextView;
+import android.view.Window;
+
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.cloudtravel.cloudtravelandroid.R;
@@ -23,18 +24,19 @@ public class MainActivity extends CloudTravelBaseActivity implements BottomNavig
     }
 
     private void initView() {
+        hideTitleBar();
         BottomNavigationBar bottomNavigationBar = findViewById(R.id.bottom_navigation_bar);
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_SHIFTING);
         bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_RIPPLE);
         bottomNavigationBar
                 .addItem(new BottomNavigationItem(R.drawable.navigation_icon_discover,"发现")
-                        .setActiveColorResource(R.color.myBlue))
+                        .setActiveColorResource(R.color.my_green))
                 .addItem(new BottomNavigationItem(R.drawable.navigation_icon_calendar,"日程")
-                        .setActiveColorResource(R.color.myColor2))
+                        .setActiveColorResource(R.color.my_orange))
                 .addItem(new BottomNavigationItem(R.drawable.navigation_icon_paper_plane,"分享")
-                        .setActiveColorResource(R.color.myColor3))
+                        .setActiveColorResource(R.color.my_grey_blue))
                 .addItem(new BottomNavigationItem(R.drawable.navigation_icon_user,"我")
-                        .setActiveColorResource(R.color.myColor4))
+                        .setActiveColorResource(R.color.my_dark_blue))
                 .setFirstSelectedPosition(0)
                 .initialise();
         fragments = getFragments();
@@ -52,19 +54,19 @@ public class MainActivity extends CloudTravelBaseActivity implements BottomNavig
                 switch (position) {
                     case 0:
                         fragment = new DiscoverFragment();
-                        setTitleString("发现");
+                        //setTitleString("发现");
                         break;
                     case 1:
                         fragment = new ScheduleFragment();
-                        setTitleString("日程");
+                        //setTitleString("日程");
                         break;
                     case 2:
                         fragment = new MomentsFragment();
-                        setTitleString("分享");
+                        //setTitleString("分享");
                         break;
                     case 3:
                         fragment = new HomeFragment();
-                        setTitleString("我");
+                        //setTitleString("我");
                     default:
                         break;
                 }

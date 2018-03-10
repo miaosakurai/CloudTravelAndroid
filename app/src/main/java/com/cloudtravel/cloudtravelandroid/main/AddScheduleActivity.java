@@ -20,7 +20,7 @@ public class AddScheduleActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        backImage.findViewById(R.id.back_button);
+        backImage=findViewById(R.id.back_button);
         backImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
