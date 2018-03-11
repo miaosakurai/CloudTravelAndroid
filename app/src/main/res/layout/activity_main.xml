@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="22sp"
-                android:gravity="center"/>
+                android:layout_gravity="center"/>
         </android.support.v7.widget.Toolbar>
         <FrameLayout
             android:id="@+id/frame_layout"

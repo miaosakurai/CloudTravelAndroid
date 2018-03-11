@@ -6,14 +6,8 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-<<<<<<< HEAD
         android:layout_height="match_parent"
         android:orientation="vertical">
-=======
-        android:layout_height="wrap_content"
-        android:background="@color/my_blue"
-        android:id="@+id/top_bar">
->>>>>>> b253ff74f8188b6207f7dd6ec2b993f0d8a455b9
 
         <LinearLayout
             android:orientation="vertical"
