@@ -1,7 +1,6 @@
 package com.cloudtravel.cloudtravelandroid.main;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -32,8 +31,6 @@ import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
 import com.cloudtravel.cloudtravelandroid.R;
-import com.cloudtravel.cloudtravelandroid.widget.SearchResultItem;
-import com.cloudtravel.cloudtravelandroid.widget.SearchResultItemAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,7 +83,7 @@ public class SearchActivity extends AppCompatActivity {
         baiduMap=mapView.getMap();
         baiduMap.setMyLocationEnabled(true);
 
-        for(int i=0;i<5;i++){
+        for(int i=0;i<10;i++){
             SearchResultItem item=new SearchResultItem("上海环球港","上海市普陀区中山北路3300号");
             itemList.add(item);
         }
