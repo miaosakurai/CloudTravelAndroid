@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+<<<<<<< HEAD
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.util.TypedValue;
@@ -14,6 +15,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+=======
+>>>>>>> b253ff74f8188b6207f7dd6ec2b993f0d8a455b9
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -39,6 +42,7 @@ public class MainActivity extends CloudTravelBaseActivity implements BottomNavig
     }
 
     private void initView() {
+<<<<<<< HEAD
         super.hideTitleBar();
         mDrawerLayout=findViewById(R.id.drawer_layout);
         headPortrait =findViewById(R.id.tool_bar_head_portrait);
@@ -49,16 +53,29 @@ public class MainActivity extends CloudTravelBaseActivity implements BottomNavig
             }
         });
         toolBarTitle=findViewById(R.id.tool_bar_title);
+=======
+>>>>>>> b253ff74f8188b6207f7dd6ec2b993f0d8a455b9
         BottomNavigationBar bottomNavigationBar = findViewById(R.id.bottom_navigation_bar);
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
         bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_RIPPLE);
         bottomNavigationBar
+<<<<<<< HEAD
                 .addItem(new BottomNavigationItem(R.drawable.navigation_icon_discover,"Discover")
                         .setActiveColorResource(R.color.my_green))
                 .addItem(new BottomNavigationItem(R.drawable.navigation_icon_calendar,"Schedule")
                         .setActiveColorResource(R.color.my_orange))
                 .addItem(new BottomNavigationItem(R.drawable.navigation_icon_paper_plane,"Share")
                         .setActiveColorResource(R.color.my_grey_blue))
+=======
+                .addItem(new BottomNavigationItem(R.drawable.navigation_icon_discover,"发现")
+                        .setActiveColorResource(R.color.my_green))
+                .addItem(new BottomNavigationItem(R.drawable.navigation_icon_calendar,"日程")
+                        .setActiveColorResource(R.color.my_orange))
+                .addItem(new BottomNavigationItem(R.drawable.navigation_icon_paper_plane,"分享")
+                        .setActiveColorResource(R.color.my_grey_blue))
+                .addItem(new BottomNavigationItem(R.drawable.navigation_icon_user,"我")
+                        .setActiveColorResource(R.color.my_dark_blue))
+>>>>>>> b253ff74f8188b6207f7dd6ec2b993f0d8a455b9
                 .setFirstSelectedPosition(0)
                 .initialise();
         setBottomNavigationItem(bottomNavigationBar,4,24,18);
@@ -77,16 +94,22 @@ public class MainActivity extends CloudTravelBaseActivity implements BottomNavig
                 switch (position) {
                     case 0:
                         fragment = new DiscoverFragment();
-                        setTitleString("发现");
+                        //setTitleString("发现");
                         break;
                     case 1:
                         fragment = new ScheduleFragment();
-                        setTitleString("日程");
+                        //setTitleString("日程");
                         break;
                     case 2:
                         fragment = new MomentsFragment();
-                        setTitleString("分享");
+                        //setTitleString("分享");
                         break;
+<<<<<<< HEAD
+=======
+                    case 3:
+                        fragment = new HomeFragment();
+                        //setTitleString("我");
+>>>>>>> b253ff74f8188b6207f7dd6ec2b993f0d8a455b9
                     default:
                         break;
                 }
