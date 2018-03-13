@@ -40,7 +40,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.SignUpActivity"></activity>
+        <activity android:name=".main.SignUpActivity" />
+        <activity android:name=".main.RoadMapActivity"></activity>
     </application>
 
 </manifest>
