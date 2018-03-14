@@ -9,7 +9,7 @@
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?android:colorPrimary"
+        android:foreground="@color/bnb_light_blue"
         android:theme="@style/AppTheme"
         android:id="@+id/tb_title_bar"
         android:tag="tb_title_bar">
