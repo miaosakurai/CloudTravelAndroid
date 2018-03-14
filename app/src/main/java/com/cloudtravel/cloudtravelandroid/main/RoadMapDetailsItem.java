@@ -1,10 +1,10 @@
 package com.cloudtravel.cloudtravelandroid.main;
 
-public class TextDst {
+public class RoadMapDetailsItem {
     private String name;
     private String time;
     private int imageId;
-    public TextDst(String mTime,int mImageId,String mName){
+    public RoadMapDetailsItem(String mTime, int mImageId, String mName){
         name=mName;
         time=mTime;
         imageId=mImageId;

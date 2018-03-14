@@ -53,6 +53,7 @@ public class SignInActivity extends CloudTravelBaseActivity {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 UserLoginRequest request = new UserLoginRequest();
                 request.setAccountNumber(emailEditText.getText().toString());
                 request.setUserPassword(passwordEditText.getText().toString());

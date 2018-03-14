@@ -11,8 +11,8 @@ import com.cloudtravel.cloudtravelandroid.R;
 
 import java.util.List;
 
-public class TextDstAdapter extends RecyclerView.Adapter<TextDstAdapter.ViewHolder> {
-    private List<TextDst> mList;
+public class RoadMapDetailsItemAdapter extends RecyclerView.Adapter<RoadMapDetailsItemAdapter.ViewHolder> {
+    private List<RoadMapDetailsItem> mList;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
@@ -27,7 +27,7 @@ public class TextDstAdapter extends RecyclerView.Adapter<TextDstAdapter.ViewHold
         }
     }
 
-    public TextDstAdapter(List<TextDst> list) {
+    public RoadMapDetailsItemAdapter(List<RoadMapDetailsItem> list) {
         mList = list;
     }
 
@@ -40,7 +40,7 @@ public class TextDstAdapter extends RecyclerView.Adapter<TextDstAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        TextDst ele = mList.get(position);
+        RoadMapDetailsItem ele = mList.get(position);
         holder.img.setImageResource(ele.getImage());
         holder.name.setText(ele.getName());
         holder.time.setText(ele.getTime());

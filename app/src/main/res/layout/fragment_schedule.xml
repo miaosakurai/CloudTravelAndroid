@@ -26,6 +26,7 @@
                 android:id="@+id/calendar"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
                 android:src="@drawable/schedule_activity_icon_calendar" />
 
             <Spinner
@@ -33,7 +34,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_margin="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_toEndOf="@+id/calendar"
                 android:layout_toRightOf="@+id/calendar"
                 android:entries="@array/year"
@@ -45,70 +47,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_margin="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_toEndOf="@+id/spin_year"
                 android:layout_toRightOf="@+id/spin_year"
                 android:entries="@array/month"
                 android:prompt="@string/month_title"
                 android:spinnerMode="dropdown"></Spinner>
-
         </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:background="@color/my_blue"
             android:orientation="horizontal">
 
-            <Button
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="7dp"
-                android:background="@drawable/circle_btn"
-                android:text="1" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="7dp"
-                android:background="@drawable/circle_btn"
-                android:text="2" />
-
-            <Button
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="7dp"
-                android:background="@drawable/circle_btn"
-                android:text="3" />
-
-            <Button
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="7dp"
-                android:background="@drawable/circle_btn"
-                android:text="4" />
-
-            <Button
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="7dp"
-                android:background="@drawable/circle_btn"
-                android:text="5" />
-
-            <Button
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="7dp"
-                android:background="@drawable/circle_btn"
-                android:text="6" />
-
-            <Button
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="7dp"
-                android:background="@drawable/circle_btn"
-                android:text="7" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/circle_btn_recyclerview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <RelativeLayout
