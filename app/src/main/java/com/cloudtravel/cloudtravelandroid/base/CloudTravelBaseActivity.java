@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Toast;
 import com.cloudtravel.cloudtravelandroid.R;
 import com.cloudtravel.cloudtravelandroid.widget.LoadingDialog;
 import com.cloudtravel.cloudtravelandroid.widget.MessageDialog;
@@ -43,6 +44,15 @@ public class CloudTravelBaseActivity extends BaseActivity {
         });
         dialog.setOnCancelListener(onCancelListener);
         return dialog;
+    }
+
+    public void makeToast(final String content) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(CloudTravelBaseActivity.this, content, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }

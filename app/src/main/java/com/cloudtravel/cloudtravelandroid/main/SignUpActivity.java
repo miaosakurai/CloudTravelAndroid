@@ -9,8 +9,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.cloudtravel.cloudtravelandroid.R;
+import com.cloudtravel.cloudtravelandroid.base.CloudTravelBaseActivity;
+import com.cloudtravel.cloudtravelandroid.base.CloudTravelBaseCallBack;
+import com.cloudtravel.cloudtravelandroid.main.api.LoginApi;
+import com.cloudtravel.cloudtravelandroid.main.api.SignUpApi;
+import com.cloudtravel.cloudtravelandroid.main.request.SignUpRequest;
+import com.cloudtravel.cloudtravelandroid.main.request.UserLoginRequest;
+import com.lemon.support.util.ToastUtils;
 
-public class SignUpActivity extends AppCompatActivity {
+public class SignUpActivity extends CloudTravelBaseActivity {
 
     private Button signUpButton;
     private TextView signInTextView;
@@ -42,8 +49,22 @@ public class SignUpActivity extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignUpActivity.this,MainActivity.class);
-                startActivity(intent);
+                if (!passwordEditText.getText().toString().equals(confirmPasswordEditText.getText().toString())) {
+                    ToastUtils.show(SignUpActivity.this, "两次密码不一致");
+                } else {
+                    SignUpRequest request = new SignUpRequest();
+                    request.setAccountNumber(emailEditText.getText().toString());
+                    request.setUserPassword(passwordEditText.getText().toString());
+                    addRequest(getService(SignUpApi.class).doSignUp(request), new CloudTravelBaseCallBack() {
+                        @Override
+                        public void onSuccess200(Object o) {
+                            makeToast("注册成功");
+                            Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
+                }
             }
         });
     }
