@@ -5,9 +5,10 @@ package com.cloudtravel.cloudtravelandroid.base;
  *
  * @author yerunjie
  */
-public class CloudTravelBaseResponse {
+public class CloudTravelBaseResponse<T> {
     public String returnCode;
     public String returnMsg;
+    public T obj;
 
     public boolean isOk() {
         return returnCode.equals("0");

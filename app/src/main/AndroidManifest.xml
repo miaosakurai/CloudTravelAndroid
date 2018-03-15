@@ -41,7 +41,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".main.SignUpActivity" />
-        <activity android:name=".main.RoadMapActivity"></activity>
+        <activity android:name=".main.RoadMapActivity"/>
+        <activity android:name=".main.TestActivity" />
     </application>
 
 </manifest>

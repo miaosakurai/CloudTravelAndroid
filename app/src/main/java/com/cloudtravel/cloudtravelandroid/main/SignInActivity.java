@@ -1,18 +1,11 @@
 package com.cloudtravel.cloudtravelandroid.main;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.ViewTarget;
 import android.widget.TextView;
 import com.cloudtravel.cloudtravelandroid.R;
 import com.cloudtravel.cloudtravelandroid.base.CloudTravelBaseActivity;
@@ -60,7 +53,7 @@ public class SignInActivity extends CloudTravelBaseActivity {
                     @Override
                     public void onSuccess200(Object o) {
                         makeToast("登录成功");
-                        Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+                        Intent intent = new Intent(SignInActivity.this, TestActivity.class);
                         startActivity(intent);
                         finish();
                     }
