@@ -52,11 +52,16 @@ public class MainActivity extends CloudTravelBaseActivity implements BottomNavig
         bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_RIPPLE);
         bottomNavigationBar
                 .addItem(new BottomNavigationItem(R.drawable.navigation_icon_discover,"Discover")
-                        .setActiveColorResource(R.color.my_green))
+                        //.setActiveColorResource(R.color.my_green))
+                        .setActiveColorResource(R.color.bnb_dark_blue))
                 .addItem(new BottomNavigationItem(R.drawable.navigation_icon_calendar,"Schedule")
-                        .setActiveColorResource(R.color.my_orange))
+                        //.setActiveColorResource(R.color.my_orange))
+                        //.setActiveColorResource(R.color.bnb_blue))
+                        .setActiveColorResource(R.color.bnb_powder_blue))
                 .addItem(new BottomNavigationItem(R.drawable.navigation_icon_paper_plane,"Share")
-                        .setActiveColorResource(R.color.my_grey_blue))
+                        //.setActiveColorResource(R.color.my_grey_blue))
+                        //.setActiveColorResource(R.color.bnb_grey_blue))
+                        .setActiveColorResource(R.color.bnb_smoke))
                 .setFirstSelectedPosition(0)
                 .initialise();
         setBottomNavigationItem(bottomNavigationBar,4,24,18);

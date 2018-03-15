@@ -24,7 +24,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="24jimGUmQ2PrC5mbx9m7GhIbEwRfe1Mw" />
+            android:value="RWS0kce9mugyCDw2HGqRDSAp5Y9r8fBv" />
 
         <activity android:name=".main.MainActivity" />
         <activity android:name=".main.SearchActivity" />

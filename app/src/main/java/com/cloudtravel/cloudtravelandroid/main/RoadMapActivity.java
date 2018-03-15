@@ -24,7 +24,7 @@ import java.util.List;
 
 public class RoadMapActivity extends AppCompatActivity {
 
-    private List<TextDst> textdstlist = new ArrayList<>();
+    private List<RoadMapDetailsItem> textdstlist = new ArrayList<>();
     private MapView mapView;
     private BaiduMap mBaiduMap;
 
@@ -67,14 +67,14 @@ public class RoadMapActivity extends AppCompatActivity {
         mBaiduMap.setMapStatus(mMapStatusUpdate);
         // List
 
-        TextDst a = new TextDst("9:00", R.drawable.place_type_icon_mall, "Global");
+        RoadMapDetailsItem a = new RoadMapDetailsItem("9:00", R.drawable.place_type_icon_mall, "Global");
         textdstlist.add(a);
-        TextDst aa = new TextDst("10:00", R.drawable.place_type_icon_amusement_park, "Park");
+        RoadMapDetailsItem aa = new RoadMapDetailsItem("10:00", R.drawable.place_type_icon_amusement_park, "Park");
         textdstlist.add(aa);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_recycler);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        TextDstAdapter tda = new TextDstAdapter(textdstlist);
+        RoadMapDetailsItemAdapter tda = new RoadMapDetailsItemAdapter(textdstlist);
         recyclerView.setAdapter(tda);
         recyclerView.addItemDecoration(new RoadMapDetailsItemDecoration());
     }

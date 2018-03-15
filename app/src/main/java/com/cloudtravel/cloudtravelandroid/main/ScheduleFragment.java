@@ -22,6 +22,7 @@ import java.util.List;
 public class ScheduleFragment extends Fragment {
 
     private List<ScheduleItem> scheduleList = new ArrayList<>();
+    private List<CircleBtnItem> circleBtnList = new ArrayList<>();
     private ImageView add_schedule;
     private Button createSchedule;
 
@@ -35,14 +36,22 @@ public class ScheduleFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_schedule, container, false);
-        initSchedule();
-        RecyclerView recyclerView = view.findViewById(R.id.schedule_recyclerview);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(layoutManager);
-        ScheduleItemAdapter scheduleAdapter = new ScheduleItemAdapter(scheduleList);
-        recyclerView.setAdapter(scheduleAdapter);
+        initCircleBtn();
+        RecyclerView btnRecyclerView = view.findViewById(R.id.circle_btn_recyclerview);
+        LinearLayoutManager btnLayoutManager = new LinearLayoutManager(getContext());
+        btnLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        btnRecyclerView.setLayoutManager(btnLayoutManager);
+        CircleBtnItemAdapter circleBtnItemAdapter = new CircleBtnItemAdapter(circleBtnList);
+        btnRecyclerView.setAdapter(circleBtnItemAdapter);
 
-        add_schedule=view.findViewById(R.id.add_schedule);
+        initSchedule();
+        RecyclerView scheduleRecyclerView = view.findViewById(R.id.schedule_recyclerview);
+        LinearLayoutManager ScheduleLayoutManager = new LinearLayoutManager(getContext());
+        scheduleRecyclerView.setLayoutManager(ScheduleLayoutManager);
+        ScheduleItemAdapter scheduleAdapter = new ScheduleItemAdapter(scheduleList);
+        scheduleRecyclerView.setAdapter(scheduleAdapter);
+
+        add_schedule= view.findViewById(R.id.add_schedule);
         add_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,7 +59,7 @@ public class ScheduleFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        createSchedule=view.findViewById(R.id.creat_schedule);
+        createSchedule= view.findViewById(R.id.creat_schedule);
         createSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,4 +82,12 @@ public class ScheduleFragment extends Fragment {
         scheduleList.add(schedule_d);
     }
 
+
+    private void initCircleBtn(){
+        for (int i = 1; i < 31; i++){
+            CircleBtnItem circleBtnItem = new CircleBtnItem(Integer.toString(i));
+            circleBtnItem.setDate(Integer.toString(i));
+            circleBtnList.add(circleBtnItem);
+        }
+    }
 }
